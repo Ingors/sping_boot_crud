@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменение аккаунта</title>
+</head>
+<body>
+<h2>Изменение аккаунта пользователя</h2>
+<form th:action="@{/userUpdate}" th:object="${user}" method="post">
+    <table th:border="1">
+        <tr>
+            <td>ID:</td>
+            <td><label>
+                <input type="number" th:field="${user.id}" readonly/>
+            </label></td>
+        </tr>
+        <tr>
+            <td>Имя:</td>
+            <td><label>
+                <input type="text" th:field="${user.name}"/>
+            </label></td>
+        </tr>
+        <tr>
+            <td>Фамилия:</td>
+            <td><label>
+                <input type="text" th:field="${user.surname}"/>
+            </label></td>
+        </tr>
+        <tr>
+            <td>Возраст:</td>
+            <td><label>
+                <input type="number" th:field="${user.age}"/>
+            </label></td>
+        </tr>
+        <tr>
+            <td>Телефон:</td>
+            <td><label>
+                <input type="text" th:field="${user.phone}"/>
+            </label></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Update"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
